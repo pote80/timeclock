@@ -7,7 +7,7 @@ This project is designed to give you an opportunity to practice building a full 
 Good luck and work hard!
 
 # Expectations 
-This is similar to the simulations given to you in your cohort, but larger in scale. We are asking you to build a much more robust project that will strech your skills and hopefully help you build your understanding. You will have 3 weeks to build this project. We expect you to solve as many problems and bugs as you can on your own. You will learn much more if you push yourself to understand what the code you're writing is doing. Your mentor is always willing to help, but once you leave DevMountain it will be on you to contine your learning and solve problems, so it's good to strike out on your own as much as possible.
+This is similar to the simulations given to you in your cohort, but larger in scale. We are asking you to build a much more robust project that will stretch your skills and hopefully help you build your understanding. You will have 3 weeks to build this project. We expect you to solve as many problems and bugs as you can on your own. You will learn much more if you push yourself to understand what the code you're writing is doing. Your mentor is always willing to help, but once you leave DevMountain it will be on you to continue your learning and solve problems, so it's good to strike out on your own as much as possible.
 
 After the 3 weeks are over a mentor will look over your code and you will be expected to walk them through how different parts are working. Use this as an opportunity to practice talking about code, as well as to learn about the parts that you are not sure about. The mentor will push you to explain as much as they can in an attempt to find holes in your understanding. This way we can better teach you and get you ready for the job market.
 
@@ -42,7 +42,7 @@ If you have any questions about any of the expectation for this simulation or yo
 # Technical Requirements - Front-end
 
 ## Header
-* The header should be created as its own componenet.
+* The header should be created as its own component.
 * The header component should be rendered only once.
   * This can be accomplished by rendering it outside of the routes.
 * Clicking on the logo should navigate the user to the homepage.
