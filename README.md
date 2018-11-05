@@ -15,7 +15,7 @@ If you have any questions about any of the expectation for this simulation or yo
 
 # Style Guide
 
-## Logo available in the `assets` folder of this repo.
+<b>Logo available in the `assets` folder of this repo.</b>
 
 <img src="https://github.com/bethtelford/simulation-timeclock/blob/master/assets/style_guide.png" />
 
@@ -33,7 +33,7 @@ If you have any questions about any of the expectation for this simulation or yo
 
 <img src="https://github.com/bethtelford/simulation-timeclock/blob/master/views/new.png" />
 <br />
-<img src="https://github.com/bethtelford/simulation-timeclock/blob/master/views/new_pt2.png" />
+<img src="https://github.com/bethtelford/simulation-timeclock/blob/master/views/new_p2.png" />
 
 ## Edit Time-Punch
 
