@@ -5,9 +5,9 @@ import '../../App.css'
 
 const Nav = () => {
     return (
-        <div class='Nav-header'>
+        <div className='Nav-header'>
             <Link to={`/`}>
-                <img src={Logo} alt='Logo' class='Nav-img' />
+                <img src={Logo} alt='Logo' className='Nav-img' />
             </Link>
         </div>
     )
