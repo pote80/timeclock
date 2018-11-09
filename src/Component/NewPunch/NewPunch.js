@@ -1,35 +1,46 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class NewPunch extends Component {
     constructor() {
         super()
         this.state = {
-            date: '',
-            day: '',
-            time: '',
-            punchType: ''
+            punch_date: '',
+            punch_day: '',
+            punch_time: '',
+            punch_type: ''
         }
         this.handleDateChange = this.handleDateChange.bind(this);
+        this.handleDayChange = this.handleDayChange.bind(this);
+        this.handleTimeChange = this.handleTimeChange.bind(this);
+        this.handlePunchChange = this.handlePunchChange.bind(this);
+        this.addNewPost = this.addNewPost.bind(this);
     }
 
-    handleDateChange=(e)=>{
-        this.setState({date: e.target.value})
-        console.log(this.state.date)
+    handleDateChange = (e) => {
+        this.setState({ punch_date: e.target.value })
+        console.log(this.state.punch_date)
     }
 
-    handleDayChange=(e)=>{
-        this.setState({day: e.target.value})
-        console.log(this.state.day)
+    handleDayChange = (e) => {
+        this.setState({ punch_day: e.target.value })
+        console.log(this.state.punch_day)
     }
 
-    handleTimeChange=(e)=>{
-        this.setState({time: e.target.value})
-        console.log(this.state.time)
+    handleTimeChange = (e) => {
+        this.setState({ punch_time: e.target.value })
+        console.log(this.state.punch_time)
     }
 
-    handlePunchChange=(e)=>{
-        this.setState({punchType: e.target.value})
-        console.log(this.state.punchType)
+    handlePunchChange = (e) => {
+        this.setState({ punch_type: e.target.value })
+        console.log(this.state.punch_type)
+    }
+
+    addNewPost = () => {
+        const { punch_date, punch_day, punch_time, punch_type } = this.state;
+        axios.post('/api/punches', { punch_date, punch_day, punch_time, punch_type })
+            .then(window.location = '/#/')
     }
 
     render() {
@@ -43,24 +54,24 @@ export default class NewPunch extends Component {
                         Day:
                     <select onChange={this.handleDayChange}>
                             <option value=''>--</option>
-                            <option value='sunday'>Sunday</option>
-                            <option value='monday'>Monday</option>
-                            <option value='tuesday'>Tuesday</option>
-                            <option value='wednesday'>Wednesday</option>
-                            <option value='thursday'>Thursday</option>
-                            <option value='friday'>Friday</option>
-                            <option value='saturday'>Saturday</option>
+                            <option value='Sunday'>Sunday</option>
+                            <option value='Monday'>Monday</option>
+                            <option value='Tuesday'>Tuesday</option>
+                            <option value='Wednesday'>Wednesday</option>
+                            <option value='Thursday'>Thursday</option>
+                            <option value='Friday'>Friday</option>
+                            <option value='Saturday'>Saturday</option>
                         </select><br />
                         Time:
                     <input type='time' name='time' onChange={this.handleTimeChange} />
                         Punch Type:
                     <select onChange={this.handlePunchChange}>
                             <option value=''>--</option>
-                            <option value='in'>IN</option>
-                            <option value='out'>OUT</option>
+                            <option value='In'>IN</option>
+                            <option value='Out'>OUT</option>
                         </select><br />
-                        <button type='submit' value='create_punch'>Create Punch</button>
-                        <button type='reset' vlaue='cancel'>Cancel</button>
+                        <button type='submit' value='create_punch' onClick={() => this.addNewPost()}>Create Punch</button>
+                        <button type='reset' value='cancel'>Cancel</button>
                     </form>
                 </div>
             </div>
