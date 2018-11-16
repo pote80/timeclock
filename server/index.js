@@ -24,21 +24,39 @@ app.post('/api/punches', (req, res) => {
     })
 })
 
+app.put(`/api/punches/:id`, (req, res) => {
+    console.log(req.body)
+    const dbInstance = req.app.get('db');
+    const { id, punch_date, punch_day, punch_time, punch_type } = req.body;
+    dbInstance.update_punch([id, punch_date, punch_day, punch_time, punch_type]).then((response) => {
+        res.status(200).send(response)
+    })
+})
+
 app.get('/api/punches', (req, res) => {
     const dbInstance = req.app.get('db');
-    dbInstance.get_all_punches().then((data) =>{
+    dbInstance.get_all_punches().then((data) => {
         res.status(200).send(data)
     })
 })
 
-app.delete('/api/punches/:id', (req, res)=>{
-    const {id} = req.params
+app.get('/api/punches/:id', (req, res) => {
+    const { id } = req.params
     console.log(req.params)
-    const dbInstance =  req.app.get('db');
+    const dbInstance = req.app.get('db');
+    dbInstance.get_punch([id]).then((data) => {
+        res.status(200).send(data)
+    })
+})
+
+app.delete('/api/punches/:id', (req, res) => {
+    const { id } = req.params
+    console.log(req.params)
+    const dbInstance = req.app.get('db');
     dbInstance.delete_punch([id]).then((response) => {
         res.status(200).send(response)
     })
-  })
+})
 
 app.listen(port, () => {
     console.log(`Ship docked at port: ${port}`)

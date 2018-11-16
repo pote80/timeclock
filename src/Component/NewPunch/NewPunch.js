@@ -70,8 +70,8 @@ export default class NewPunch extends Component {
                             <option value='In'>IN</option>
                             <option value='Out'>OUT</option>
                         </select><br />
-                        <button type='submit' value='create_punch' onClick={() => this.addNewPost()}>Create Punch</button>
-                        <button type='reset' value='cancel'>Cancel</button>
+                        <button value='create_punch' onClick={() => this.addNewPost()}>Create Punch</button>
+                        <button type='reset' value='cancel' onClick={() => window.location = '/#/'}>Cancel</button>
                     </form>
                 </div>
             </div>
